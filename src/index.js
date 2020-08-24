@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let card = document.createElement('div');
     card.setAttribute('class', 'card');
     let h2 = document.createElement("h2");
-    h2.textContent = toy.name 
+    h2.textContent = toy.name
     card.appendChild(h2)
     let image = document.createElement("img");
     image.setAttribute('src',toy.image);
@@ -35,14 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
         editButton.innerText = "Edit"
         //grab value of inpt field
         let newToyName = document.getElementById(`edit-${toy.id}`).value
-        // make patch request to update toy 
-        //remove input field 
+        // make patch request to update toy
+        //remove input field
 
         h2.innerHTML = newToyName
       } else {
         editButton.innerText = "Save"
         h2.innerHTML= `<input type='text' id='edit-${toy.id}' value='${h2.innerText}' ></input>`
-        //replace the tpys name with input field 
+        //replace the tpys name with input field
       }
     })
     card.appendChild(editButton);
@@ -50,14 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
     toyCollection.appendChild(card);
   }
 
-  
+
 
   function cardsInfo(toys){
     for (const toy of toys){
       createCard(toy);
     }
   }
-  
+
   function increaseLikes(toy) {
       let formData = {
       likes: toy.likes
